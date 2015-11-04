@@ -1,5 +1,5 @@
 general:
-  build_dir: api
+  build_dir: src
 test:
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/

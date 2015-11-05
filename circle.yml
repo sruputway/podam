@@ -1,5 +1,10 @@
+machine:
+  java:
+    version: openjdk7
+
+
 test:
-  post:
+  override:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
     
@@ -13,6 +18,3 @@ general:
     - "~/simplecov" # relative to the user's home directory
     - "test.txt" # a single file, relative to the build directory
 
-machine:
-  java:
-    version: openjdk7

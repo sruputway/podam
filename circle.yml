@@ -1,9 +1,3 @@
-dependencies:
-  override:
-    - bundle install:
-        timeout: 240
-        environment:
-          foo: bar
-          foo2: bar2
-        pwd:
-          test_dir
+test:
+  post:
+    surefire:test

@@ -5,6 +5,12 @@ machine:
  general:
   artifacts:
   - build/reports
+  
+dependencies:
+  cache_directories:
+    - "assets/cache"    # relative to the build directory
+    - "~/assets/output" # relative to the user's home directory
+
 
 
 test:
@@ -12,9 +18,5 @@ test:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
     
-dependencies:
-  cache_directories:
-    - "assets/cache"    # relative to the build directory
-    - "~/assets/output" # relative to the user's home directory
 
 

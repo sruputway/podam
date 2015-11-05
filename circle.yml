@@ -3,11 +3,15 @@ test:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
     
-    general:
+dependencies:
+  cache_directories:
+    - "assets/cache"    # relative to the build directory
+    - "~/assets/output" # relative to the user's home directory
+general:
   artifacts:
     - "selenium/screenshots" # relative to the build directory
     - "~/simplecov" # relative to the user's home directory
-    - "test.xml" # a single file, relative to the build directory
+    - "test.txt" # a single file, relative to the build directory
 
 machine:
   java:
